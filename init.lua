@@ -483,7 +483,7 @@ local on_attach = function(_, bufnr)
   nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
   nmap('<leader>ws', require('telescope.builtin').lsp_dynamic_workspace_symbols, '[W]orkspace [S]ymbols')
 
-  nmap('<leader>fb', "<cmd>lua require 'telescope'.extensions.file_browser.file_browser()<CR>", '[F]ile [B]rowser')
+  nmap('<leader>fb', ":Telescope file_browser path=%:p:h select_buffer=true<CR>", '[F]ile [B]rowser')
   -- See `:help K` for why this keymap
   nmap('K', vim.lsp.buf.hover, 'Hover Documentation')
   nmap('<C-k>', vim.lsp.buf.signature_help, 'Signature Documentation')
@@ -531,7 +531,7 @@ local servers = {
   -- clangd = {},
   -- gopls = {},
   -- pyright = {},
-  -- rust_analyzer = {},
+  rust_analyzer = {},
   -- tsserver = {},
   -- html = { filetypes = { 'html', 'twig', 'hbs'} },
 
